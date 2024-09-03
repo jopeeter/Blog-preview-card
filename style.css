@@ -48,28 +48,35 @@ body{
 
 .blog__image{
     border-radius: 10px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3125rem;
+    height: 200px;
+    width: 336px;
 }
 
 .blog__text1{
     font-size: 1.5rem;
     letter-spacing: 0;
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+
 }
 
 .blog__text2{
-    font-size: 1rem;
-    letter-spacing: 0;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
-
-.blog__text3{
     font-size: .875rem;
     letter-spacing: 0;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.blog__text3{
+    font-size: 1rem;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--gray500);
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 .blog__text4{
@@ -82,6 +89,7 @@ body{
     border-radius: 4px;
     padding: 4px 12px;
     color: var(--gray950);
+    line-height: 1.5;
     margin-bottom: 1rem;
 
 }
@@ -89,6 +97,10 @@ body{
 .author{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    width: 129px;
 }
 
 
@@ -98,8 +110,9 @@ body{
 }
 
 .author__name{
-    font-size:1.3125rem;
     text-align: center;
+    font-size: .875rem;
+    font-weight: 950;
 }
 
 
