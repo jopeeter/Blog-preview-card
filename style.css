@@ -6,17 +6,53 @@
 --gray950: hsl(0, 0%, 7%);
 }
 
+Basic Bolierplate CSS Resets
 
-html {
-box-sizing: border-box;
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-
-*,::before,::after{
-box-sizing:inherit;
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
 }
-
-h1, h2, p{
-    margin: 0;
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 body{
@@ -40,17 +76,35 @@ body{
     border: 1px solid var(--gray950);
     border-radius: 20px;
     box-shadow: 8px 8px 0 0 black;
+
+    @media only screen and (max-width: 375px) {
+        width: 327px;
+        height: 501px;
+    }
 }
 
 .container{
     margin: 1.5rem;
+    
+}
+
+.container *:not(:last-child){
+    margin-bottom: 1.5rem;
 }
 
 .blog__image{
     border-radius: 10px;
-    margin-bottom: 1.3125rem;
     height: 200px;
     width: 336px;
+
+    @media only screen and (max-width: 375px){
+        width: 279px;
+        object-fit:cover;
+    }
+}
+
+.blog__content *:not(:last-child){
+    margin-bottom: .75rem;
 }
 
 .blog__text1{
@@ -58,8 +112,17 @@ body{
     letter-spacing: 0;
     font-weight: 800;
     line-height: 1.5;
-    margin-bottom: 1rem;
 
+    @media only screen and (max-width: 375px) {
+        font-size: 1.25rem;
+    }
+
+}
+
+.blog__text1:hover{
+    color: var(--yellow);
+    cursor: pointer;
+    transition: color 100ms ease-in-out;
 }
 
 .blog__text2{
@@ -67,7 +130,11 @@ body{
     letter-spacing: 0;
     font-weight: 500;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    color: var(--gray950);
+
+    @media only screen and (max-width: 375px) {
+        font-size: .75rem;
+    }
 }
 
 .blog__text3{
@@ -76,42 +143,45 @@ body{
     font-weight: 500;
     color: var(--gray500);
     line-height: 1.5;
-    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 375px) {
+        font-size: .875rem;
+    }
 }
 
 .blog__text4{
+    display: inline-block;
     font-size: .875rem;
     letter-spacing: 0;
     font-weight: 800;
     background-color: var(--yellow);
-    height: 29px;
-    width: 82px;
     border-radius: 4px;
     padding: 4px 12px;
     color: var(--gray950);
     line-height: 1.5;
-    margin-bottom: 1rem;
-
+    text-align: center;
+    
+    @media only screen and (max-width: 375px) {
+        font-size: .75rem;
+    }
 }
 
 .author{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display:flex;
     align-items: center;
-    height: 32px;
-    width: 129px;
+    margin: 1.5rem;
 }
 
 
 .author__image{
     height: 32px;
     width: 32px;
+    margin-right: .75rem;
 }
 
 .author__name{
-    text-align: center;
     font-size: .875rem;
+    line-height: 1.5;
     font-weight: 950;
 }
 
